@@ -2,6 +2,7 @@ var btn_no = document.querySelector("#btn_no");
 var btn_yes = document.querySelector("#btn_yes");
 
 btn_no.addEventListener("mouseover", btn_no_run);
+btn_no.addEventListener("click", btn_no_run);
 btn_yes.addEventListener("click", btn_yes_func);
 
 function btn_no_run()
@@ -19,6 +20,8 @@ function btn_no_run()
     btn_no.style.top  = randomY + "px";
 }
 
+
+
 function btn_yes_func()
 {
     let music = document.querySelector("#cute-music");
@@ -32,7 +35,7 @@ function btn_yes_func()
     btn_no.style.visibility = "hidden";
     btn_yes.style.visibility = "hidden";
     
-    image.style.visibility = "hidden";
+    image.style.display = "none";
     music.style.visibility = "visible";
     music.play();
 }
