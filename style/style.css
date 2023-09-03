@@ -1,126 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+:root{
+    --color-60: #FC3A3C;
+    --color-30: #F88980;
+    --color-10: #000000;
+}
+
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    font-family: 'Patrick Hand', cursive;
+    outline: none;
 }
 
 body{
-    margin: 0;
+    height: 100vh;
+    width: 100vw;
 }
 
-.main-box{
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(-20deg,#eb78f1, #a406ac, #97079e);
+main{
+    height: 100%;
+    width: 100%;
+
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
 .content-box{
-    width: 350pt;
-    height: 400pt;
-    border-radius: 15pt;
-    text-align: center;
-    background: #ffffff;
-    border: 2pt solid #000000;
+    width: 500px;
+    border: 1px solid var(--color-60);
+    border-radius: 20px;
+    padding: 50px 0px 50px 0px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding: 30px 30px;
 }
 
-.cute-gif{
-    width: 70%;
-    
-}
 
-.cute-music{
-    width: 70%;
-    visibility: hidden;
-    border: 2pt solid #000000; 
-    border-radius: 15pt;   
-
-}
 
 .midia-box{
-    width: 100%;
-    height: 200pt;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.midia-box > .cute-gif, .cute-music{
+    width: 300px;
+}
+
+.midia-box > .cute-music{
+    display: none;
 }
 
 .button-box{
-    width: 35%;
+    width: 250px;
+    margin-top: 15px;
     display: flex;
-    outline: none;
+    justify-content: center;
+    gap: 20px;
 }
 
-.btn-yes-box{
-    margin-right: 20pt;
+.button-box > div {
+    width: 100px;
 }
 
-.btn_yes{
-    height: 30pt;
-    width: 50pt;
-    background-color: #9e2ec7;
-    border: 2pt solid #000000;
-    border-radius: 5pt;
+button{
+    width: 100px;
+    height: 30px;
+    border: none;
+    color: var(--color-10);
+    background-color: var(--color-30);
+    transition: 0.2s;
 }
 
-.btn_no{
+button[class="btn-yes"]:hover {
+    cursor: pointer;
+    opacity: 0.8;
+    border-radius: 10px;
+}
+
+button[class="btn-no"] {
     position: absolute;
-    height: 30pt;
-    width: 50pt;
-    background-color: #9e2ec7;
-    border: 2pt solid #000000;
-    border-radius: 5pt;
+    transition: 0.5s;
 }
 
-.btn_yes:hover{
-    height: 30pt;
-    width: 50pt;
-    background-color: #d579f6;
-    border: 2pt solid #000000;
-    border-radius: 5pt;
-}
-
-@media only screen and (max-width: 600px){
-    .content-box{
+@media only screen and (max-width: 550px){
+    .content-box {
         width: 70vw;
         height: auto; 
     }
 
-    .content-box > h1{
-        font-size: 5vw;
+    .midia-box > .cute-gif, .cute-music {
+        width: 200px;
     }
 
-    .content-box > h2{
-        font-size: 4vw;
+    h1{
+        font-size: 20px;
     }
 
-    .midia-box{
-        width: 100%;
-        height: 55vw;
-    }
-    
-    .btn-yes-box{
-        margin-right: 10pt;
-    }
-    
-    .cute-gif, .cute-music{
-        width: 90%;
+    h2{
+        font-size: 16px;
     }
 
     .button-box{
-        width: 60%;
+        gap: 15px;
     }
 
-    .btn_no{
-        width: 20vw;
-        height: auto;
-    }
-    
-    .btn_yes{
-        width: 20vw;
-        height: auto;
+    button {
+        border-radius: 10px;
     }
 
 }

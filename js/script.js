@@ -1,41 +1,46 @@
-var btn_no = document.querySelector("#btn_no");
-var btn_yes = document.querySelector("#btn_yes");
+var btnNo = document.querySelector(".btn-no");
+var btnYes = document.querySelector(".btn-yes");
 
-btn_no.addEventListener("mouseover", btn_no_run);
-btn_no.addEventListener("click", btn_no_run);
-btn_yes.addEventListener("click", btn_yes_func);
+btnNo.addEventListener("mouseover", btnNoRun);
+btnNo.addEventListener("click", btnNoRun);
+btnYes.addEventListener("click", btnYesFunc);
 
-function btn_no_run()
+function btnNoRun()
 {
     let window_width  = window.innerWidth;
     let window_height = window.innerHeight;
     
-    let max_X = window_width  - btn_no.offsetWidth;
-    let max_Y = window_height - btn_no.offsetHeight;
+    let max_X = window_width  - btnNo.offsetWidth;
+    let max_Y = window_height - btnNo.offsetHeight;
 
     let randomX = Math.floor(Math.random() * max_X);
     let randomY = Math.floor(Math.random() * max_Y);
-
-    btn_no.style.left = randomX + "px";
-    btn_no.style.top  = randomY + "px";
-}
-
-
-
-function btn_yes_func()
-{
-    let music = document.querySelector("#cute-music");
-    let image = document.querySelector("#cute-gif");
-    let title = document.querySelector("#title");
-    let text = document.querySelector("#text");
     
+    btnNo.style.top  = randomY + "px";
+    btnNo.style.left = randomX + "px";
+}   
+
+function btnYesFunc()
+{
+    const music = document.querySelector("#cute-music");
+    const image = document.querySelector("#cute-gif");
+    const title = document.querySelector("#title");
+    const text = document.querySelector("#text");
+    const videos = ["./midia/music.mp4", "./midia/music2.mp4", "./midia/music3.mp4", "./midia/music4.mp4", "./midia/music5.mp4"]
+
+    const finalVideo = Math.floor(Math.random()*videos.length);
+
+
     title.innerHTML = "Bem... Parece que vou <br> ficar do teu ladinho por <br> toda a minha vida &#128149"
     
-    text.style.visibility = "hidden"
-    btn_no.style.visibility = "hidden";
-    btn_yes.style.visibility = "hidden";
+    
+
+    text.style.display = "none";
+    btnNo.style.display = "none";
+    btnYes.style.display = "none";
     
     image.style.display = "none";
-    music.style.visibility = "visible";
+    music.src = videos[finalVideo];
+    music.style.display = "block";
     music.play();
 }
